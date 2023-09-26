@@ -87,9 +87,11 @@ def ses():
     print(round(sm, 3), " seconds.\n")
     print("score:", round(score, 3))
 
-    tt = t.localtime()
+    tt = t.gmtime()
+    ft = t.strftime("%Y-%m-%d %H:%M:%S", tt)
+
     with open("scores.txt", "w") as f:
-        wr = f.write(f"max: {m}         {round(score, 3)}         {tt}\n")
+        wr = f.write(f"max: {m}         score: {round(score, 3)}         log_time:{ft}\n")
 
     chc = input("submit score? (y/n) : ")
     if chc == "Y" or chc == "y":
