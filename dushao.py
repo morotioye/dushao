@@ -1,5 +1,5 @@
 import random as ra
-
+import time as t
 # method to get n distinct nums between 0 and m (both included)
 def req(n, m):
     if n == 0 or m == 0 or n > m + 1:
@@ -35,20 +35,17 @@ def ses():
     while m > 10:
         m = int(input("what number should we go to? (max 10) : "))
 
-    ord = req(m+1,m) # have the sequence of nums
+    sm = 0
+    ord = req(m+1,m) 
     for n in ord:   
         print(f"{n} : ")
+        st = t.time()  
         input("enter : ")
+        et = t.time() - st 
+        sm += et
         print(ns[n])
         input("enter : ")
-
-# TODO add 'easy' 'hard' 'fail'
+    print(round(sm, 3), " seconds.")
 
 ses()
 
-# enter max 
-# show number
-# user returns anything
-# return letter
-# user returns anything
-# show next number
