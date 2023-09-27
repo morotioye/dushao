@@ -16,3 +16,5 @@ Timestamp           | Category | Count | Score |
 
 2023-09-27 20:49:12 | words | 61 | 9815.932
 
+2023-09-27 21:27:37 | numbers | 10 | 271.62
+
