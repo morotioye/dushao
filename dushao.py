@@ -92,19 +92,12 @@ def nses():
     tt = t.gmtime()
     ft = t.strftime("%Y-%m-%d %H:%M:%S", tt)
 
-    with open("scores.txt", "a") as f:
-        wr = f.write(f"{ft} | {'numbers'} | {m} | {round(score, 3)}\n")
+    score_string = f"{ft} | {'numbers'} | {m} | {round(score, 3)}\n"
 
     chc = input("submit score? (y/n) : ")
-    if chc == "Y" or chc == "y":
-        sbm(wr)
+    if chc.lower() == "y":
+        sbm(score_string)
         print("score submitted.\n")
-    
-    chcc = input("again? (y/n) : ")
-    if chcc == "Y" or chcc == "y":
-        dushao()
-    else:
-        print("bye.")
 
 def cses():
     with open("chars.json", "r") as f:
@@ -146,19 +139,18 @@ def cses():
     tt = t.gmtime()
     ft = t.strftime("%Y-%m-%d %H:%M:%S", tt)
 
-    with open("scores.txt", "a") as f:
-        wr = f.write(f"{ft} | {'words'} | {cts} | {round(score, 3)}\n")
+    score_string = f"{ft} | {'words'} | {cts} | {round(score, 3)}\n"
 
     chc = input("submit score? (y/n) : ")
     if chc.lower() == "y":
-        sbm(wr)
+        sbm(score_string)
         print("score submitted.\n")
 
-    chcc = input("again? (y/n) : ")
-    if chcc.lower() == "y":
-        dushao()
-    else:
-        print("bye.")
+        chcc = input("again? (y/n) : ")
+        if chcc.lower() == "y":
+            dushao()
+        else:
+            print("bye.")
 
 
 
