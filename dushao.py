@@ -66,15 +66,16 @@ def nses():
     sm = 0
     sc = 0
 
+    input("set your keyboard to chinese. - enter on ready : ")
     ord = req(m+1,m) 
-    for n in ord:   
-        print(f"{Colors.OKCYAN}{n}{Colors.ENDC}")
+    for idx, n in enumerate(ord, start=1):   
+        print(f"{Colors.OKCYAN}Question {idx}/{len(ord)}: {n}{Colors.ENDC}")
         st = t.time()  
         g = input("ans : ")
         if n == 1 and (g == "一" or g == "幺"):
             print(f"{Colors.OKGREEN}hit{Colors.ENDC}")
             sc += 1
-        if g == ns[str(n)]:
+        elif g == ns[str(n)]:
             sc += 1
             print(f"{Colors.OKGREEN}hit{Colors.ENDC}")
         else:
@@ -123,8 +124,9 @@ def cses():
     sm = 0
 
     input("set your keyboard to chinese. - enter on ready : ")
-    for key in selected_keys:
-        print(f"{Colors.OKCYAN}{key}{Colors.ENDC}")
+    selected_keys = ra.sample(list(cs.keys()), cts)
+    for idx, key in enumerate(selected_keys, start=1):
+        print(f"{Colors.OKCYAN}Question {idx}/{len(selected_keys)}: {key}{Colors.ENDC}")
         stt = t.time()
         g = input("ans : ")
         if g == cs[key]:
