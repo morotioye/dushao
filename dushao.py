@@ -51,7 +51,7 @@ def sbm(scst):
     # Append the new score to scores.txt
     scores_file = os.path.join(repo_dir, "scores.txt")
     with open(scores_file, "a") as f:
-        f.write(f"{scst}\n")
+        f.write(f"{scst}\n\n")
     
     # Commit the changes
     repo.git.add(scores_file)
@@ -70,28 +70,31 @@ def ses():
 
     ord = req(m+1,m) 
     for n in ord:   
-        print(f"{n} : ")
+        print(f"{n}")
         st = t.time()  
         g = input("ans : ")
-        if n == 1 and g == "yao1" or g == "yi1":
+        if n == 1 and (g == "yao1" or g == "yi1"):
+            print("hit")
             sc += 1
         if g == ns[n]:
             sc += 1
+            print("hit")
+        else:
+            print("miss")
         et = t.time() - st 
         sm += et
         print(ns[n])
-        input("next : ")
     
-    et -= m-sc
-    score = sc * et
+    sm -= m-sc
+    score = sc * sm
     print(round(sm, 3), " seconds.\n")
     print("score:", round(score, 3))
 
     tt = t.gmtime()
     ft = t.strftime("%Y-%m-%d %H:%M:%S", tt)
 
-    with open("scores.txt", "w") as f:
-        wr = f.write(f"max: {m}         score: {round(score, 3)}         log_time:{ft}\n")
+    with open("scores.txt", "a") as f:
+        wr = f.write(f"max: {m}         score: {round(score, 3)}         log_time:{ft}")
 
     chc = input("submit score? (y/n) : ")
     if chc == "Y" or chc == "y":
