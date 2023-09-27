@@ -93,7 +93,7 @@ def nses():
     ft = t.strftime("%Y-%m-%d %H:%M:%S", tt)
 
     with open("scores.txt", "a") as f:
-        wr = f.write(f"max: {m}         score: {round(score, 3)}         log_time:{ft}")
+        wr = f.write(f"{ft} | {'numbers'} | {m} | {round(score, 3)}\n")
 
     chc = input("submit score? (y/n) : ")
     if chc == "Y" or chc == "y":
@@ -147,7 +147,7 @@ def cses():
     ft = t.strftime("%Y-%m-%d %H:%M:%S", tt)
 
     with open("scores.txt", "a") as f:
-        wr = f.write(f"max: {cts}         score: {round(score, 3)}         log_time:{ft}")
+        wr = f.write(f"{ft} | {'words'} | {cts} | {round(score, 3)}\n")
 
     chc = input("submit score? (y/n) : ")
     if chc.lower() == "y":
