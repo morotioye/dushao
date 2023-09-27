@@ -10,3 +10,5 @@ Timestamp           | Category | Count | Score |
 
 2023-09-27 18:11:06 | words | 25 | 19
 
+2023-09-27 18:13:05 | numbers | 10 | 12
+
