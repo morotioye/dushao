@@ -1,2 +1,4 @@
 # dushao
-terminal flashcards for learning chinese numbers and tones
+local terminal flashcard system for chinese character spaced repitition practice.
+
+tldr, a scrappy anki with horrible variable names
