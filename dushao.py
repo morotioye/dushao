@@ -46,7 +46,7 @@ def sbm(scst):
     # Append the new score to scores.txt
     scores_file = os.path.join(repo_dir, "scores.txt")
     with open(scores_file, "a") as f:
-        f.write(f"{scst}\n\n")
+        f.write(f"{scst}\n")
     
     # Commit the changes
     repo.git.add(scores_file)
@@ -54,6 +54,9 @@ def sbm(scst):
     
     # Push the changes
     origin.push()
+
+    # fetch
+    origin.fetch()
 
 def nses():
     with open("nums.json", "r") as f:
