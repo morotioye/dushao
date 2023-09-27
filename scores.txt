@@ -1,3 +1,6 @@
 max: 10         score: 16.424         log_time:2023-09-27 00:02:38
 max: 10         score: 34.952         log_time:2023-09-27 00:06:49
 67
+max: 1         score: 4.568         log_time:2023-09-27 00:13:49
+max: 1         score: 11.88         log_time:2023-09-27 00:15:33
+65
