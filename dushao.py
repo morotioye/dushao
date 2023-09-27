@@ -6,7 +6,7 @@ import os
 
 class Colors:
     HEADER = '\033[95m'
-    OKBLUE = '\033[94m'
+    OKBLUE = '\03……3[94m'
     OKCYAN = '\033[96m'
     OKGREEN = '\033[92m'
     WARNING = '\033[93m'
@@ -101,7 +101,7 @@ def nses():
     
     chcc = input("again? (y/n) : ")
     if chcc == "Y" or chcc == "y":
-        nses()
+        dushao()
     else:
         print("bye.")
 
@@ -117,12 +117,13 @@ def cses():
         print("Invalid number of characters.")
         return
 
-    st = req(cts, len(cs) - 1)
+    # Select random keys from the dictionary
+    selected_keys = ra.sample(list(cs.keys()), cts)
     sc = 0
     sm = 0
 
-    for i in st:
-        key = list(cs.keys())[i]
+    input("set your keyboard to chinese. - enter on ready : ")
+    for key in selected_keys:
         print(f"{Colors.OKCYAN}{key}{Colors.ENDC}")
         stt = t.time()
         g = input("ans : ")
@@ -153,7 +154,7 @@ def cses():
 
     chcc = input("again? (y/n) : ")
     if chcc.lower() == "y":
-        cses()
+        dushao()
     else:
         print("bye.")
 
